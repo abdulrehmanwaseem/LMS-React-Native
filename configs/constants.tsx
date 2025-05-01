@@ -1,6 +1,7 @@
 import { IsIPAD } from "@/themes/app.constant";
 import { Dimensions, Image } from "react-native";
 import { scale, verticalScale } from "react-native-size-matters";
+
 //@ts-ignore
 import One from "@/assets/images/onboarding/1.png";
 //@ts-ignore
