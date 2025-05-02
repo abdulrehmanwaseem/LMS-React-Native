@@ -19,7 +19,7 @@ import {
 } from "@/themes/app.constant";
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
-// import AuthModal from "../auth/auth.modal";
+import AuthModal from "../auth/auth.modal";
 
 export default function Slide({
   slide,
@@ -40,6 +40,13 @@ export default function Slide({
     } else {
       setIndex(index + 1);
     }
+  };
+
+  const handlePressLeft = (
+    index: number,
+    setIndex: (index: number) => void
+  ) => {
+    setIndex(index - 1);
   };
 
   return (
@@ -141,7 +148,19 @@ export default function Slide({
           />
         </TouchableOpacity>
       )}
-      {/* <Modal
+      {index !== 0 && (
+        <TouchableOpacity
+          style={styles.arrowButtonLeft}
+          onPress={() => handlePressLeft(index, setIndex)}
+        >
+          <Ionicons
+            name="chevron-back-outline"
+            size={scale(18)}
+            color="black"
+          />
+        </TouchableOpacity>
+      )}
+      <Modal
         animationType="fade"
         transparent={true}
         visible={modalVisible}
@@ -152,7 +171,7 @@ export default function Slide({
         <Pressable style={{ flex: 1 }} onPress={() => setModalVisible(false)}>
           <AuthModal setModalVisible={setModalVisible} />
         </Pressable>
-      </Modal> */}
+      </Modal>
     </>
   );
 }
@@ -210,6 +229,19 @@ const styles = StyleSheet.create({
     alignItems: "center",
     zIndex: 1000,
     right: moderateScale(5),
+    top: Platform.OS === "ios" ? verticalScale(345) : verticalScale(385),
+    transform: [{ translateY: -30 }],
+  },
+  arrowButtonLeft: {
+    position: "absolute",
+    width: scale(30),
+    height: scale(30),
+    borderRadius: scale(20),
+    backgroundColor: "rgba(255, 255, 255, 0.3)",
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 1000,
+    left: moderateScale(5),
     top: Platform.OS === "ios" ? verticalScale(345) : verticalScale(385),
     transform: [{ translateY: -30 }],
   },
