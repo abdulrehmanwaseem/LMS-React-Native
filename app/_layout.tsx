@@ -1,5 +1,5 @@
 import { ThemeProvider } from "@/context/theme.context";
-import { Stack } from "expo-router";
+import { SplashScreen, Stack } from "expo-router";
 import React from "react";
 import {
   Poppins_600SemiBold,
@@ -9,6 +9,8 @@ import {
   Poppins_500Medium,
   useFonts,
 } from "@expo-google-fonts/poppins";
+
+SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const { Screen } = Stack;
