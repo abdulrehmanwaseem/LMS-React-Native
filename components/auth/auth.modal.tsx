@@ -1,6 +1,6 @@
 import { fontSizes, IsIOS } from "@/themes/app.constant";
 import { BlurView } from "expo-blur";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Dimensions,
   Image,
@@ -28,9 +28,14 @@ export default function AuthModal({
       });
     }
   };
+
   const googleSignIn = () => {};
   const githubSignIn = () => {};
   const appleSignIn = () => {};
+
+  useEffect(() => {
+    configuredGoogleSignIn();
+  }, []);
 
   return (
     <View style={styles.fullscreenWrapper}>
