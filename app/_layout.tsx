@@ -28,7 +28,7 @@ export default function RootLayout() {
     <ThemeProvider>
       <Stack screenOptions={{ headerShown: false }}>
         <Screen name="index" />
-        <Screen name="(routes)/onboarding/index.tsx" />
+        <Screen name="(routes)/onboarding" />
       </Stack>
     </ThemeProvider>
   );
