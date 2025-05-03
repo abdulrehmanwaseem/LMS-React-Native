@@ -22,6 +22,10 @@ export default function AuthModal({
       GoogleSignin.configure({
         iosClientId: process.env.EXPO_PUBLIC_IOS_GOOGLE_API_KEY,
       });
+    } else {
+      GoogleSignin.configure({
+        webClientId: process.env.EXPO_PUBLIC_ANDROID_GOOGLE_API_KEY,
+      });
     }
   };
   const googleSignIn = () => {};
