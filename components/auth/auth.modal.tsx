@@ -35,7 +35,7 @@ export default function AuthModal({
       const userInfo = await GoogleSignin.signIn();
       console.log(userInfo);
     } catch (error) {
-      console.error(error);
+      console.error("Google SignIn Error: ", error);
     }
   };
   const githubSignIn = () => {};
