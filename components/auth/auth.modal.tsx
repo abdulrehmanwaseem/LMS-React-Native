@@ -29,7 +29,15 @@ export default function AuthModal({
     }
   };
 
-  const googleSignIn = () => {};
+  const googleSignIn = async () => {
+    try {
+      await GoogleSignin.hasPlayServices();
+      const userInfo = await GoogleSignin.signIn();
+      console.log(userInfo);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   const githubSignIn = () => {};
   const appleSignIn = () => {};
 
