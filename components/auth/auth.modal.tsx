@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   modalContainer: {
-    width: "82.5%",
+    width: "82%",
     backgroundColor: "#fff",
     borderRadius: 24,
     paddingVertical: 30,
@@ -105,11 +105,10 @@ const styles = StyleSheet.create({
     zIndex: 2,
   },
   buttonGroup: {
-    width: "97.5%",
+    width: "97%",
     marginTop: 20,
     gap: 12,
   },
-
   authButton: {
     flexDirection: "row",
     alignItems: "center",
@@ -124,7 +123,6 @@ const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 2,
   },
-
   authIcon: {
     width: 24,
     height: 24,
