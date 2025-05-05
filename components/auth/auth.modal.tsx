@@ -9,7 +9,7 @@ import {
   Text,
   View,
 } from "react-native";
-import { GoogleSignin } from "@react-native-google-signin/google-signin";
+// import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { HEIGHT, WIDTH } from "@/configs/constants";
 
 export default function AuthModal({
@@ -17,23 +17,23 @@ export default function AuthModal({
 }: {
   setModalVisible: (modal: boolean) => void;
 }) {
-  const configuredGoogleSignIn = () => {
-    if (IsIOS) {
-      GoogleSignin.configure({
-        iosClientId: process.env.EXPO_PUBLIC_IOS_GOOGLE_API_KEY,
-      });
-    } else {
-      GoogleSignin.configure({
-        webClientId: process.env.EXPO_PUBLIC_ANDROID_GOOGLE_API_KEY,
-      });
-    }
-  };
+  // const configuredGoogleSignIn = () => {
+  //   if (IsIOS) {
+  //     GoogleSignin.configure({
+  //       iosClientId: process.env.EXPO_PUBLIC_IOS_GOOGLE_API_KEY,
+  //     });
+  //   } else {
+  //     GoogleSignin.configure({
+  //       webClientId: process.env.EXPO_PUBLIC_ANDROID_GOOGLE_API_KEY,
+  //     });
+  //   }
+  // };
 
   const googleSignIn = async () => {
     try {
-      await GoogleSignin.hasPlayServices();
-      const userInfo = await GoogleSignin.signIn();
-      console.log(userInfo);
+      // await GoogleSignin.hasPlayServices();
+      // const userInfo = await GoogleSignin.signIn();
+      // console.log(userInfo);
     } catch (error) {
       console.error("Google SignIn Error: ", error);
     }
@@ -41,9 +41,9 @@ export default function AuthModal({
   const githubSignIn = () => {};
   const appleSignIn = () => {};
 
-  useEffect(() => {
-    configuredGoogleSignIn();
-  }, []);
+  // useEffect(() => {
+  //   configuredGoogleSignIn();
+  // }, []);
 
   return (
     <View style={styles.fullscreenWrapper}>
