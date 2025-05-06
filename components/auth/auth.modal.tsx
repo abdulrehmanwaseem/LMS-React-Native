@@ -34,7 +34,13 @@ export default function AuthModal({
     try {
       // await GoogleSignin.hasPlayServices();
       // const userInfo = await GoogleSignin.signIn();
+      const userInfo = {
+        name: "test",
+        email: "test@gmail.com",
+        avatar: "testhttps://avatar.iran.liara.run/public/1",
+      };
       // console.log(userInfo);
+      await authHandler(userInfo);
     } catch (error) {
       console.error("Google SignIn Error: ", error);
     }
