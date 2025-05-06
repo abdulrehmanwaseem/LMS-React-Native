@@ -11,6 +11,7 @@ import {
 } from "react-native";
 // import { GoogleSignin } from "@react-native-google-signin/google-signin";
 import { HEIGHT, WIDTH } from "@/configs/constants";
+import JWT from "expo-jwt";
 
 export default function AuthModal({
   setModalVisible,
@@ -38,8 +39,27 @@ export default function AuthModal({
       console.error("Google SignIn Error: ", error);
     }
   };
+
   const githubSignIn = () => {};
   const appleSignIn = () => {};
+
+  const authHandler = ({
+    name,
+    email,
+    avatar,
+  }: {
+    name: string;
+    email: string;
+    avatar: string;
+  }) => {
+    const user = { name, email, avatar };
+    const token = JWT.encode(
+      {
+        ...user,
+      },
+      process.env.EXPO_PUBLIC_JWT_KEY || ""
+    );
+  };
 
   // useEffect(() => {
   //   configuredGoogleSignIn();
