@@ -1,4 +1,6 @@
 import express, { Request, Response } from "express";
+import "dotenv/config";
+import jwt from "jsnowebtoken";
 
 const app = express();
 const port = 3000;
